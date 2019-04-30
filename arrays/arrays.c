@@ -7,7 +7,7 @@
 typedef struct Array
 {
   int capacity;    // How many elements can this array hold? It will hold the amount passed in as the arg upon creation
-  int count;       // How many states does the array currently hold? states??
+  int count;       // How many states does the array currently hold? as many as **elements is not null
   char **elements; // The string elements contained in the array
 } Array;
 
@@ -125,8 +125,6 @@ void arr_insert(Array *arr, char *element, int index)
     resize_array(arr);
     if (orig_capacity == arr->capacity)
     {
-      printf("%d", orig_capacity);
-      printf("%d", arr->capacity);
       printf("array is full and cannot be resized\n");
       return;
     }
